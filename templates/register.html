@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>Reg Page</title>
+{% endblock title %}
+
+{% block content %}
+    <h3>Registration Page</h3>
+    {% if message %}
+    <div class="alert alert-info" role="alert">
+        {{ message }}
+    {% endif %}
+
+    <form action="register" method="post">
+        {% csrf_token %}
+    <div class="container">
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" name="name" placeholder="Enter your name">
+            <label for="floatingInput">User Name</label>
+          </div>
+        <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="floatingInput" name="password" placeholder="Enter your name">
+            <label for="floatingInput">Password</label>
+          </div>
+      <button class="btn btn-primary" type="submit">Register</button>
+      <a href="login" class="btn btn-secondary">already have a account?</a>
+
+    </div>
+    </form>
+    {% endblock content %}
+    
